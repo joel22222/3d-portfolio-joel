@@ -895,15 +895,10 @@ camera-controls@^2.4.2:
   resolved "https://registry.yarnpkg.com/camera-controls/-/camera-controls-2.7.2.tgz#19a8b5d10e650088e41fe4ee59bafc35df524961"
   integrity sha512-6+gaZFK3LYbWaXC94EN0BYLlvpo9xfUqwp59vsU3nV7WXIU05q4wyP5TOgyG1tqTHReuBofb20vKfZNBNjMtzw==
 
-caniuse-lite@^1.0.30001449:
-  version "1.0.30001458"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001458.tgz#871e35866b4654a7d25eccca86864f411825540c"
-  integrity sha512-lQ1VlUUq5q9ro9X+5gOEyH7i3vm+AYVT1WDCVB69XOZ17KZRhnZ9J0Sqz7wTHQaLBJccNCHq8/Ww5LlOIZbB0w==
-
-caniuse-lite@^1.0.30001464, caniuse-lite@^1.0.30001489:
-  version "1.0.30001495"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001495.tgz#64a0ccef1911a9dcff647115b4430f8eff1ef2d9"
-  integrity sha512-F6x5IEuigtUfU5ZMQK2jsy5JqUUlEFRVZq8bO2a+ysq5K7jD6PPc9YXZj78xDNS3uNchesp1Jw47YXEqr+Viyg==
+caniuse-lite@^1.0.30001449, caniuse-lite@^1.0.30001464, caniuse-lite@^1.0.30001489:
+  version "1.0.30001745"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001745.tgz"
+  integrity sha512-ywt6i8FzvdgrrrGbr1jZVObnVv6adj+0if2/omv9cmR2oiZs30zL4DIyaptKcbOrBdOIc74QTMoJvSE2QHh5UQ==
 
 chalk@^2.0.0:
   version "2.4.2"

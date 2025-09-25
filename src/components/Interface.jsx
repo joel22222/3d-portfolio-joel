@@ -190,7 +190,7 @@ const projects = [
     description:
       "A virtual assistant solution for recruitment, handling candidate queries, resume submissions, and client interactions efficiently.",
     image: "/textures/peopleprofilerschatbot1.png",
-    link: "https://youtu.be/YOUR_UNLISTED_VIDEO_2",
+    link: "https://youtu.be/8P-_1oWI4cM",
   },
   {
     title: "Custom Storytelling Experience Chatbot",
