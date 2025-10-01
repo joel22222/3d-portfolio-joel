@@ -193,11 +193,11 @@ const projects = [
     link: "https://youtu.be/8P-_1oWI4cM",
   },
   {
-    title: "Custom Storytelling Experience Chatbot",
+    title: "Custom Kiosk Style Chatbot",
     description:
-      "An immersive 3D storytelling and educational experience highlighting Singapore’s history, built with React Three Fiber and interactive avatars.",
+      "An immersive 3D storytelling and educational experience, handling questions about my home.",
     image: "/textures/OdysseaChatbot.png",
-    link: "https://youtu.be/YOUR_UNLISTED_VIDEO_3",
+    link: "https://youtu.be/wO9I7etHYps",
   },
 ];
 
