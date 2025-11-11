@@ -35,7 +35,6 @@ export const Interface = () => {
       <SkillsSection />
       <ProjectsSection />
       <ContactSection />
-
     </div>
   );
 };
@@ -71,7 +70,6 @@ const AboutSection = () => {
     </Section>
   );
 };
-
 
 const skills = [
   {
@@ -186,7 +184,6 @@ const projects = [
       "An AI-powered chatbot that integrates with restaurant data from Chope's Top Table, extracting menus and providing smart recommendations.",
     image: "/textures/TopTableChatbot.png",
     link: "https://youtu.be/YOUR_UNLISTED_VIDEO_1",
-    pdfUrl: "/pdfs/restaurant-kiosk-chatbot.pdf",
   },
   {
     title: "Custom Recruitment Website Chatbot",
@@ -194,7 +191,6 @@ const projects = [
       "A virtual assistant solution for recruitment, handling candidate queries, resume submissions, and client interactions efficiently.",
     image: "/textures/peopleprofilerschatbot1.png",
     link: "https://youtu.be/8P-_1oWI4cM",
-    pdfUrl: "/pdfs/recruitment-chatbot.pdf",
   },
   {
     title: "Custom Kiosk Style Chatbot",
@@ -202,7 +198,6 @@ const projects = [
       "An immersive 3D storytelling and educational experience, handling questions about my home.",
     image: "/textures/OdysseaChatbot.png",
     link: "https://youtu.be/wO9I7etHYps",
-    pdfUrl: "/pdfs/kiosk-chatbot.pdf",
   },
   {
     title: "AI for Advanced Manufacturing",
@@ -210,7 +205,6 @@ const projects = [
       "Unsupervised anomaly detection system predicting machine failures using Isolation Forest and autoencoders. Achieved an F1 score of 0.79 and provided predictive maintenance insights.",
     image: "/textures/AIAMPic.jpg",
     link: "#",
-    pdfUrl: "/pdfs/AIAM_Project_Summary.pdf",
   },
   {
     title: "AI for Cybersecurity",
@@ -218,7 +212,6 @@ const projects = [
       "Supervised learning project to detect phishing emails using feature extraction and classification models. Includes defense strategies aligned with MITRE ATLAS techniques.",
     image: "/textures/AICSPic.jpg",
     link: "#",
-    pdfUrl: "/pdfs/ai-cybersecurity.pdf",
   },
   {
     title: "Shoe, Sandal, Boot Classification (Deep Learning)",
@@ -226,7 +219,6 @@ const projects = [
       "Convolutional Neural Network (CNN) project for image classification of shoes, sandals, and boots. Applied data augmentation and optimization techniques for high accuracy.",
     image: "/textures/DLORPic.png",
     link: "#",
-    pdfUrl: "/pdfs/shoe-classification.pdf",
   },
   {
     title: "Natural Language Processing (RAG) chatbot",
@@ -234,7 +226,6 @@ const projects = [
       "Developed a conversational AI using RAG for intent recognition and dialogue management. Integrated with a custom knowledge base for accurate responses.",
     image: "/textures/NLPPic.jpg",
     link: "#",
-    pdfUrl: "/pdfs/car-price-prediction.pdf",
   },
   {
     title: "Car Price Prediction (Machine Learning)",
@@ -242,7 +233,6 @@ const projects = [
       "Deployed a Streamlit web application predicting car prices in India. Implemented data preprocessing, feature engineering, and regression models for interactive predictions.",
     image: "/textures/MLDPPic.jpg",
     link: "#",
-    pdfUrl: "/pdfs/car-price-prediction.pdf",
   },
   {
     title: "Sustainability Mobile App (Dart)",
@@ -267,16 +257,7 @@ const projects = [
   },
 ];
 
-
 const ProjectsSection = () => {
-  const [showPdfModal, setShowPdfModal] = useState(false);
-  const [pdfUrl, setPdfUrl] = useState("");
-
-  const openPdfModal = (url) => {
-    setPdfUrl(url);
-    setShowPdfModal(true);
-  };
-
   return (
     <Section>
       <h2 className="text-5xl font-bold mb-8">Projects</h2>
@@ -307,49 +288,9 @@ const ProjectsSection = () => {
               {project.title}
             </h3>
             <p className="mt-2 text-gray-700">{project.description}</p>
-
-            {project.pdfUrl && (
-              <button
-                onClick={() => openPdfModal(project.pdfUrl)}
-                className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
-              >
-                View Project Summary
-              </button>
-            )}
           </motion.div>
         ))}
       </div>
-
-      {/* PDF Modal Overlay */}
-      {showPdfModal && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-          onClick={() => setShowPdfModal(false)}
-        >
-          <motion.div 
-            className="bg-white rounded-lg w-full max-w-5xl h-[90vh] flex flex-col"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex justify-between items-center p-4 border-b">
-              <h3 className="text-xl font-bold text-gray-800">Project Summary</h3>
-              <button
-                onClick={() => setShowPdfModal(false)}
-                className="text-gray-600 hover:text-gray-800 text-2xl font-bold"
-              >
-                ×
-              </button>
-            </div>
-            <iframe
-              src={pdfUrl}
-              className="w-full flex-1 rounded-b-lg"
-              title="PDF Viewer"
-            />
-          </motion.div>
-        </div>
-      )}
     </Section>
   );
 };
@@ -416,7 +357,6 @@ const ContactSection = () => {
   );
 };
 
-
 const ChatbotWidget = () => {
   const [open, setOpen] = useState(false);
 
@@ -434,7 +374,6 @@ const ChatbotWidget = () => {
         {open && (
           <iframe
             src={`https://joeltanchatbot.netlify.app/?v=${Date.now()}`}
-
             title="SUGARBEAR 3D Chatbot"
             className="w-[400px] h-[550px] rounded-2xl"
           />
