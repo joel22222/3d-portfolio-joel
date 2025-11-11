@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Section = (props) => {
   const { children } = props;
@@ -34,6 +35,7 @@ export const Interface = () => {
       <SkillsSection />
       <ProjectsSection />
       <ContactSection />
+
     </div>
   );
 };
@@ -52,9 +54,9 @@ const AboutSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5 }}
       >
-        I want to make and provide
+        Year 3 Applied Artificial Intelligence Student 
         <br />
-        3D Virtual Avatar Chatbots
+        Keen on building innovative AI solutions 
       </motion.p>
       <motion.a
         href="mailto:megacertgt@gmail.com"
@@ -73,31 +75,31 @@ const AboutSection = () => {
 
 const skills = [
   {
-    title: "Threejs / React Three Fiber",
+    title: "Data Structures & Algorithms",
     level: 80,
   },
   {
-    title: "React / React Native",
+    title: "Frontend Development (React.js, HTML, CSS)",
+    level: 80,
+  },
+  {
+    title: "Backend Development (Node.js, APIs)",
     level: 75,
   },
   {
-    title: "Nodejs",
-    level: 75,
+    title: "Machine Learning",
+    level: 70,
   },
   {
-    title: "JavaScript",
-    level: 60,
-  },
-  {
-    title: "Python",
-    level: 60,
+    title: "Deep Learning",
+    level: 70,
   },
 ];
 
-const designSkills = [
-  { title: "3D Modeling (Blender)", level: 40 },
-  { title: "FBX / GLTF Animation", level: 85 },
-  { title: "UI/UX Design", level: 55 },
+const designSkills= [
+  { title: "Natural Language Processing (NLP)", level: 70 },
+  { title: "Database Management (SQL / NoSQL)", level: 75 },
+  { title: "Software Engineering Principles", level: 80 },
 ];
 
 const SkillsSection = () => {
@@ -139,7 +141,7 @@ const SkillsSection = () => {
 
         {/* 3D / Design Skills */}
         <div>
-          <h2 className="text-5xl font-bold mt-10">3D / Design Skills</h2>
+          <h2 className="text-5xl font-bold mt-10">Core Skills</h2>
           <div className="mt-8 space-y-4">
             {designSkills.map((skill, index) => (
               <div className="w-64" key={index}>
@@ -181,9 +183,10 @@ const projects = [
   {
     title: "Restaurant Kiosk Chatbot",
     description:
-      "An AI-powered chatbot that integrates with restaurant data from Chope’s Top Table, extracting menus and providing smart recommendations.",
+      "An AI-powered chatbot that integrates with restaurant data from Chope's Top Table, extracting menus and providing smart recommendations.",
     image: "/textures/TopTableChatbot.png",
     link: "https://youtu.be/YOUR_UNLISTED_VIDEO_1",
+    pdfUrl: "/pdfs/restaurant-kiosk-chatbot.pdf",
   },
   {
     title: "Custom Recruitment Website Chatbot",
@@ -191,6 +194,7 @@ const projects = [
       "A virtual assistant solution for recruitment, handling candidate queries, resume submissions, and client interactions efficiently.",
     image: "/textures/peopleprofilerschatbot1.png",
     link: "https://youtu.be/8P-_1oWI4cM",
+    pdfUrl: "/pdfs/recruitment-chatbot.pdf",
   },
   {
     title: "Custom Kiosk Style Chatbot",
@@ -198,15 +202,87 @@ const projects = [
       "An immersive 3D storytelling and educational experience, handling questions about my home.",
     image: "/textures/OdysseaChatbot.png",
     link: "https://youtu.be/wO9I7etHYps",
+    pdfUrl: "/pdfs/kiosk-chatbot.pdf",
+  },
+  {
+    title: "AI for Advanced Manufacturing",
+    description:
+      "Unsupervised anomaly detection system predicting machine failures using Isolation Forest and autoencoders. Achieved an F1 score of 0.79 and provided predictive maintenance insights.",
+    image: "/textures/AIAMPic.jpg",
+    link: "#",
+    pdfUrl: "/pdfs/AIAM_Project_Summary.pdf",
+  },
+  {
+    title: "AI for Cybersecurity",
+    description:
+      "Supervised learning project to detect phishing emails using feature extraction and classification models. Includes defense strategies aligned with MITRE ATLAS techniques.",
+    image: "/textures/AICSPic.jpg",
+    link: "#",
+    pdfUrl: "/pdfs/ai-cybersecurity.pdf",
+  },
+  {
+    title: "Shoe, Sandal, Boot Classification (Deep Learning)",
+    description:
+      "Convolutional Neural Network (CNN) project for image classification of shoes, sandals, and boots. Applied data augmentation and optimization techniques for high accuracy.",
+    image: "/textures/DLORPic.png",
+    link: "#",
+    pdfUrl: "/pdfs/shoe-classification.pdf",
+  },
+  {
+    title: "Natural Language Processing (RAG) chatbot",
+    description:
+      "Developed a conversational AI using RAG for intent recognition and dialogue management. Integrated with a custom knowledge base for accurate responses.",
+    image: "/textures/NLPPic.jpg",
+    link: "#",
+    pdfUrl: "/pdfs/car-price-prediction.pdf",
+  },
+  {
+    title: "Car Price Prediction (Machine Learning)",
+    description:
+      "Deployed a Streamlit web application predicting car prices in India. Implemented data preprocessing, feature engineering, and regression models for interactive predictions.",
+    image: "/textures/MLDPPic.jpg",
+    link: "#",
+    pdfUrl: "/pdfs/car-price-prediction.pdf",
+  },
+  {
+    title: "Sustainability Mobile App (Dart)",
+    description:
+      "Created a mobile app to encourage eco-friendliness, allowing users to buy and sell items. Includes user authentication connected to a database.",
+    image: "/textures/MBAPPic.png",
+    link: "#",
+  },
+  {
+    title: "Household Item Scanner",
+    description:
+      "Developed a model using AWS Rekognition, Lambda, S3, and RDS/MySQL to recognize household items. Provides guidance on reusing, reducing, or recycling items, with live detection via camera.",
+    image: "/textures/ItemScanner.png",
+    link: "#",
+  },
+  {
+    title: "Automated Receipt Printer (RPA)",
+    description:
+      "Created an unattended UiPath robot that collects booking data, writes it into a text file, and sends confirmation emails. Deployed on Orchestrator for scheduled use.",
+    image: "/textures/ReceiptPrinter.png",
+    link: "#",
   },
 ];
 
+
 const ProjectsSection = () => {
+  const [showPdfModal, setShowPdfModal] = useState(false);
+  const [pdfUrl, setPdfUrl] = useState("");
+
+  const openPdfModal = (url) => {
+    setPdfUrl(url);
+    setShowPdfModal(true);
+  };
+
   return (
     <Section>
       <h2 className="text-5xl font-bold mb-8">Projects</h2>
+      <p className="text-gray-600 mb-4">← Scroll to see all projects →</p>
 
-      <div className="flex space-x-6 overflow-x-auto pb-4 snap-x snap-mandatory">
+      <div className="flex space-x-6 overflow-x-scroll pb-4 snap-x snap-mandatory w-full scrollbar-thin scrollbar-thumb-indigo-500 scrollbar-track-gray-200">
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -231,9 +307,49 @@ const ProjectsSection = () => {
               {project.title}
             </h3>
             <p className="mt-2 text-gray-700">{project.description}</p>
+
+            {project.pdfUrl && (
+              <button
+                onClick={() => openPdfModal(project.pdfUrl)}
+                className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+              >
+                View Project Summary
+              </button>
+            )}
           </motion.div>
         ))}
       </div>
+
+      {/* PDF Modal Overlay */}
+      {showPdfModal && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={() => setShowPdfModal(false)}
+        >
+          <motion.div 
+            className="bg-white rounded-lg w-full max-w-5xl h-[90vh] flex flex-col"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center p-4 border-b">
+              <h3 className="text-xl font-bold text-gray-800">Project Summary</h3>
+              <button
+                onClick={() => setShowPdfModal(false)}
+                className="text-gray-600 hover:text-gray-800 text-2xl font-bold"
+              >
+                ×
+              </button>
+            </div>
+            <iframe
+              src={pdfUrl}
+              className="w-full flex-1 rounded-b-lg"
+              title="PDF Viewer"
+            />
+          </motion.div>
+        </div>
+      )}
     </Section>
   );
 };
@@ -241,7 +357,7 @@ const ProjectsSection = () => {
 const ContactSection = () => {
   return (
     <Section>
-      <h2 className="text-5xl font-bold">The Story Behind My Work</h2>
+      <h2 className="text-5xl font-bold">Beyond the Classroom</h2>
 
       <motion.p
         className="text-lg text-gray-700 mt-8 max-w-2xl"
@@ -249,10 +365,8 @@ const ContactSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        My journey into creating 3D virtual avatar chatbots and React Three Fiber started during my final year project. 
-        Working on that project, I discovered how immersive 3D experiences could make technology 
-        more engaging, intuitive, and human-like. That experience sparked my passion for building 
-        interactive chatbots that combine creativity, functionality, and technology.
+        As a member of the Polytechnic Tennis Team (2024/25 - 2025/26), My team earned a Silver medal at the Tennis POL-ITE tournament. 
+        This experience taught me discipline, teamwork, and perseverance—qualities essential both on court and in tech.
       </motion.p>
 
       <motion.p
@@ -261,24 +375,90 @@ const ContactSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.2 }}
       >
-        These chatbots are designed to simplify tasks, provide guidance, and bring ideas 
-        to life in a visually compelling environment.
+        In 2024, I had the opportunity to visit Shanghai and explore companies like ENNOVI and Volkswagen. Witnessing their innovative manufacturing 
+        and AI applications deepened my passion for building practical, real-world solutions.
       </motion.p>
+
+      <motion.div
+        className="flex space-x-6 mt-8 mb-8"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1.5 }}
+      >
+        <div className="flex-1 max-w-md">
+          <img
+            src="/textures/volkswagenGS.jpg"
+            alt="Visit to Volkswagen Shanghai"
+            className="w-full h-64 object-cover rounded-lg shadow-lg"
+          />
+          <p className="text-center text-gray-600 mt-2 font-semibold">Volkswagen Shanghai</p>
+        </div>
+        <div className="flex-1 max-w-md">
+          <img
+            src="/textures/ennoviGS.jpg"
+            alt="Visit to ENNOVI Shanghai"
+            className="w-full h-64 object-cover rounded-lg shadow-lg"
+          />
+          <p className="text-center text-gray-600 mt-2 font-semibold">ENNOVI Shanghai</p>
+        </div>
+      </motion.div>
 
       <motion.p
         className="text-lg text-gray-700 mt-4 max-w-2xl"
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.8 }}
+        transition={{ duration: 1, delay: 2.1 }}
       >
-        If you’d like to get in touch with me, feel free to{" "}
-        <a
-          href="mailto:megacertgt@gmail.com"
-          className="text-indigo-600 font-bold ml-1"
-        >
-          contact me via email
-        </a>.
+        Through the Community Care Network in 2023, I helped raise funds for those in need. These experiences—from sports 
+        to community service—have shaped my values of innovation and social responsibility, which I'm excited to bring to SIT.
       </motion.p>
     </Section>
+  );
+};
+
+
+const ChatbotWidget = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+      {/* Chatbot iframe popup */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8, y: 50 }}
+        animate={open ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 50 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className={`${
+          open ? "pointer-events-auto" : "pointer-events-none"
+        } shadow-2xl rounded-2xl overflow-hidden border border-gray-200 bg-white`}
+      >
+        {open && (
+          <iframe
+            src={`https://joeltanchatbot.netlify.app/?v=${Date.now()}`}
+
+            title="SUGARBEAR 3D Chatbot"
+            className="w-[400px] h-[550px] rounded-2xl"
+          />
+        )}
+      </motion.div>
+
+      {/* Floating Button */}
+      <motion.button
+        onClick={() => setOpen(!open)}
+        className="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center space-x-2"
+        whileTap={{ scale: 0.9 }}
+      >
+        {open ? (
+          <>
+            <span>×</span>
+            <span>Close Chat</span>
+          </>
+        ) : (
+          <>
+            <span>💬</span>
+            <span>Open Chat</span>
+          </>
+        )}
+      </motion.button>
+    </div>
   );
 };
