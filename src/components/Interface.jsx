@@ -35,6 +35,7 @@ export const Interface = () => {
       <SkillsSection />
       <ProjectsSection />
       <ContactSection />
+      <ChatbotWidget />
     </div>
   );
 };
@@ -245,14 +246,14 @@ const projects = [
     title: "Household Item Scanner",
     description:
       "Developed a model using AWS Rekognition, Lambda, S3, and RDS/MySQL to recognize household items. Provides guidance on reusing, reducing, or recycling items, with live detection via camera.",
-    image: "/textures/ItemScanner.png",
+    image: "https://cdn.pixabay.com/photo/2020/07/08/04/12/work-5382501_1280.jpg",
     link: "https://portfolio-joel-blond.vercel.app/",
   },
   {
     title: "Automated Receipt Printer (RPA)",
     description:
       "Created an unattended UiPath robot that collects booking data, writes it into a text file, and sends confirmation emails. Deployed on Orchestrator for scheduled use.",
-    image: "/textures/ReceiptPrinter.png",
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
     link: "https://portfolio-joel-blond.vercel.app/",
   },
 ];
@@ -380,24 +381,6 @@ const ChatbotWidget = () => {
         )}
       </motion.div>
 
-      {/* Floating Button */}
-      <motion.button
-        onClick={() => setOpen(!open)}
-        className="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center space-x-2"
-        whileTap={{ scale: 0.9 }}
-      >
-        {open ? (
-          <>
-            <span>×</span>
-            <span>Close Chat</span>
-          </>
-        ) : (
-          <>
-            <span>💬</span>
-            <span>Open Chat</span>
-          </>
-        )}
-      </motion.button>
     </div>
   );
 };
