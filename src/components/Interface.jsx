@@ -204,56 +204,56 @@ const projects = [
     description:
       "Unsupervised anomaly detection system predicting machine failures using Isolation Forest and autoencoders. Achieved an F1 score of 0.79 and provided predictive maintenance insights.",
     image: "/textures/AIAMPic.jpg",
-    link: "#",
+    link: "https://portfolio-joel-blond.vercel.app/",
   },
   {
     title: "AI for Cybersecurity",
     description:
       "Supervised learning project to detect phishing emails using feature extraction and classification models. Includes defense strategies aligned with MITRE ATLAS techniques.",
     image: "/textures/AICSPic.jpg",
-    link: "#",
+    link: "https://portfolio-joel-blond.vercel.app/",
   },
   {
     title: "Shoe, Sandal, Boot Classification (Deep Learning)",
     description:
       "Convolutional Neural Network (CNN) project for image classification of shoes, sandals, and boots. Applied data augmentation and optimization techniques for high accuracy.",
     image: "/textures/DLORPic.png",
-    link: "#",
+    link: "https://portfolio-joel-blond.vercel.app/",
   },
   {
     title: "Natural Language Processing (RAG) chatbot",
     description:
       "Developed a conversational AI using RAG for intent recognition and dialogue management. Integrated with a custom knowledge base for accurate responses.",
     image: "/textures/NLPPic.jpg",
-    link: "#",
+    link: "https://portfolio-joel-blond.vercel.app/",
   },
   {
     title: "Car Price Prediction (Machine Learning)",
     description:
       "Deployed a Streamlit web application predicting car prices in India. Implemented data preprocessing, feature engineering, and regression models for interactive predictions.",
     image: "/textures/MLDPPic.jpg",
-    link: "#",
+    link: "https://portfolio-joel-blond.vercel.app/",
   },
   {
     title: "Sustainability Mobile App (Dart)",
     description:
       "Created a mobile app to encourage eco-friendliness, allowing users to buy and sell items. Includes user authentication connected to a database.",
     image: "/textures/MBAPPic.png",
-    link: "#",
+    link: "https://portfolio-joel-blond.vercel.app/",
   },
   {
     title: "Household Item Scanner",
     description:
       "Developed a model using AWS Rekognition, Lambda, S3, and RDS/MySQL to recognize household items. Provides guidance on reusing, reducing, or recycling items, with live detection via camera.",
     image: "/textures/ItemScanner.png",
-    link: "#",
+    link: "https://portfolio-joel-blond.vercel.app/",
   },
   {
     title: "Automated Receipt Printer (RPA)",
     description:
       "Created an unattended UiPath robot that collects booking data, writes it into a text file, and sends confirmation emails. Deployed on Orchestrator for scheduled use.",
     image: "/textures/ReceiptPrinter.png",
-    link: "#",
+    link: "https://portfolio-joel-blond.vercel.app/",
   },
 ];
 
