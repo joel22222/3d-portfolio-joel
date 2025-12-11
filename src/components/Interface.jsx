@@ -58,13 +58,33 @@ const AboutSection = () => {
         <br />
         Keen on building innovative AI solutions 
       </motion.p>
+      
+      <motion.div
+        className="mt-6 bg-gradient-to-r from-purple-100 to-indigo-100 border-2 border-indigo-300 rounded-lg p-4 shadow-md max-w-lg"
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1.8 }}
+      >
+        <p className="text-lg font-bold text-indigo-700 mb-2">
+          🌟 Check out my more detailed Portfolio!
+        </p>
+        <a
+          href="https://portfolio-joel-blond.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-base py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+        >
+          Visit 3D Portfolio →
+        </a>
+      </motion.div>
+
       <motion.a
         href="mailto:megacertgt@gmail.com"
         className={`bg-indigo-600 text-white py-4 px-8 
-          rounded-lg font-bold text-lg mt-16 inline-block`}
+          rounded-lg font-bold text-lg mt-8 inline-block`}
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 2 }}
+        transition={{ duration: 1, delay: 2.2 }}
       >
         Contact me
       </motion.a>
@@ -381,6 +401,30 @@ const ChatbotWidget = () => {
         )}
       </motion.div>
 
+      {/* Floating Button */}
+      <motion.button
+        onClick={() => setOpen(!open)}
+        className="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center space-x-2"
+        whileTap={{ scale: 0.9 }}
+      >
+        {open ? (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+            <span>Close Chat</span>
+          </>
+        ) : (
+          <>
+            <img 
+              src="https://img.icons8.com/3d-fluency/94/person-female--v2.png" 
+              alt="Chat Assistant" 
+              className="h-8 w-8"
+            />
+            <span>Chat with Me</span>
+          </>
+        )}
+      </motion.button>
     </div>
   );
 };
