@@ -35,7 +35,6 @@ export const Interface = () => {
       <SkillsSection />
       <ProjectsSection />
       <ContactSection />
-      <ChatbotWidget />
     </div>
   );
 };
@@ -375,56 +374,5 @@ const ContactSection = () => {
         to community service—have shaped my values of innovation and social responsibility, which I'm excited to bring to SIT.
       </motion.p>
     </Section>
-  );
-};
-
-const ChatbotWidget = () => {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-      {/* Chatbot iframe popup */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8, y: 50 }}
-        animate={open ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 50 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        className={`${
-          open ? "pointer-events-auto" : "pointer-events-none"
-        } shadow-2xl rounded-2xl overflow-hidden border border-gray-200 bg-white`}
-      >
-        {open && (
-          <iframe
-            src={`https://joeltanchatbot.netlify.app/?v=${Date.now()}`}
-            title="SUGARBEAR 3D Chatbot"
-            className="w-[400px] h-[550px] rounded-2xl"
-          />
-        )}
-      </motion.div>
-
-      {/* Floating Button */}
-      <motion.button
-        onClick={() => setOpen(!open)}
-        className="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center space-x-2"
-        whileTap={{ scale: 0.9 }}
-      >
-        {open ? (
-          <>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-            <span>Close Chat</span>
-          </>
-        ) : (
-          <>
-            <img 
-              src="https://img.icons8.com/3d-fluency/94/person-female--v2.png" 
-              alt="Chat Assistant" 
-              className="h-8 w-8"
-            />
-            <span>Chat with Me</span>
-          </>
-        )}
-      </motion.button>
-    </div>
   );
 };
